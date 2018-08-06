@@ -32,23 +32,43 @@ $(document).ready(function () {
 			success:function(contact_data)
 			{
 				var table_data = '<table class="table table-bordered table-striped">';
-				for  (var count =0; count < contact_data.length; count++)
-				{
-					table_data += "<tr>";
-					var cell_data = contact_data[count];
-					for (var cell_count = 0; cell_count < cell_data.length)
-					{
-						if(count === 0)
-						{
-							table_data += "<th>" + cell_data[cell_count] + "</th>";
-						}
-						else
-						{
-							table_data += "<td>" + cell_data[cell_count] + "</td>";
-						}
-					}
-					table_data += "</tr>";
-				}
+				table_data += '<tr class = "table-header header">';
+				table_data += '<th> Contact ID </th>';
+				table_data += '<th> First Name </th>';
+				table_data += '<th> Last Name </th>';
+				table_data += '<th> Email </th>';
+				table_data += '<th> Gender </th>';
+				table_data += '<th> Phone Number </th>';
+				table_data += '<th> Status </th>';
+				table_data += '<th> Address ID </th>';
+
+				// table_data += '<th> Street </th>';
+				// table_data += '<th> City </th>';
+				// table_data += '<th> Province </th>';
+				// table_data += '<th> Country </th>';
+
+				table_data += '</tr>';
+				
+				$.each(data, function(key, value){
+					table_data += '<td> data[key]["Id"] </td>';
+					table_data += '<td> data[key]["First_Name"] </td>';
+					table_data += '<td> data[key]["Last_Name"] </td>';
+					table_data += '<td> data[key]["Email"] </td>';
+					table_data += '<td> data[key]["Gender"] </td>';
+					table_data += '<td> data[key]["Phone_Number"] </td>';
+					table_data += '<td> data[key]["Contact_Status"] </td>';
+					table_data += '<td> data[key]["Address_Id"] </td>';
+					
+					// table_data += '<td> data[key][""] </td>';
+					// table_data += '<td> data[key][""] </td>';
+					// table_data += '<td> data[key][""] </td>';
+					// table_data += '<td> data[key][""] </td>';
+
+				});
+
+				$("body").append(table_data);
+				
+
 			}
 
 		})
