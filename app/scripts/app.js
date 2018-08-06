@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	$("#sub").click(function (event) {
+	$("#btnLoginClicked").click(function (event) {
 		event.preventDefault();
 
 		var userData = {
