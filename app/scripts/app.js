@@ -68,7 +68,6 @@ $(document).ready(function () {
 
 				$("body").append(table_data);
 				
-
 			}
 
 		})
